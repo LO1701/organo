@@ -1,13 +1,12 @@
-import { Banner } from './components/Banner/Banner';
-import { CampoTexto } from './components/CampoTexto';
 
-function App() {
+import Banner from './components/Banner/Banner';
+import Formulario from './components/Formulario';
+
+export default function App() {
   return (
     <div>
       <Banner />
-      <CampoTexto label={'Nome'} type={'text'} placeholder={'Digite seu nome'}/>
+      <Formulario />
     </div>
   );
 }
-
-export default App;

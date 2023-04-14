@@ -1,9 +1,9 @@
 import styles from './CampoTexto.module.css'
 
-export const CampoTexto = ({label, type, placeholder}) => {
+export default function CampoTexto ({label, type, placeholder}) {
     return (
-        <div className={styles.divExterna}>
-            <label className={styles.labelInput}>{label}</label>
+        <div className={styles.campo_texto}>
+            <label>{label}</label>
             <input type={type} placeholder={placeholder}/>
         </div>
     );
