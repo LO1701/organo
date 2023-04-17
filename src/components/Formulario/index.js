@@ -14,15 +14,23 @@ export default function Formulario () {
         'Inovação e Gestão'
     ]; 
 
+    const funcaoSalvar = (evento) => {
+        evento.preventDefault();
+        console.log(evento);
+
+    }
+
     return (
         <section className={styles.formulario}>
-            <form>
+            <form onSubmit={funcaoSalvar}>
                 <h2>Prencha os dados para criar o card do colaborador</h2>
-                <CampoTexto label={'Nome'} type={'text'} placeholder={'Digite seu nome'}/>
-                <CampoTexto label={'Cargo'} type={'text'} placeholder={'Digite seu cargo'}/>
+                <CampoTexto obrigatorio={true} label={'Nome'} type={'text'} placeholder={'Digite seu nome'}/>
+                <CampoTexto obrigatorio={true} label={'Cargo'} type={'text'} placeholder={'Digite seu cargo'}/>
                 <CampoTexto label={'Imagem'} type={'text'} placeholder={'Informe o endereço da imagem'}/>
-                <ListaSuspensa itens={times} label="Selecione seu time"/>
-                <Botao texto="Criar Card"/>
+                <ListaSuspensa obrigatorio={true} itens={times} label="Selecione seu time"/>
+                <Botao>
+                    Criar Card
+                </Botao>
             </form>
         </section>
     );
